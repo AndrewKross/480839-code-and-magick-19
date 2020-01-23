@@ -40,7 +40,7 @@ window.renderStatistics = function (ctx, players, times) {
   var maxTime = getMaxElement(times); // ищем максимальный элемент массива
 
   for (var i = 0; (i < players.length) && (i < times.length); i++) { // рисуем столбцы
-    var barHeight = (MAX_BAR_HEIGHT * times[i]) / maxTime; // конечная высота блока
+    var barHeight = MAX_BAR_HEIGHT * times[i] / maxTime; // конечная высота блока
     ctx.textAlign = 'left';
     ctx.fillStyle = '#000';
 
