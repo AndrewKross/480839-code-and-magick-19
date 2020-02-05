@@ -48,10 +48,7 @@
 
   window.setup = {
     COAT_COLORS: COAT_COLORS,
-    EYES_COLORS: EYES_COLORS,
-    getRandom: function (array) { // функция для рандомного выбора параметров
-      return Math.floor(Math.random() * array.length);
-    }
+    EYES_COLORS: EYES_COLORS
   };
 
   var createWizards = function (names, surenames, coatColors, eyesColors) { // функция для создания волшебников
@@ -59,9 +56,9 @@
     for (var i = 0; i < 4; i++) { // рандомим волшебника и пушим в основной массив волшебников
       var wizard = {};
 
-      wizard.name = names[window.setup.getRandom(names)] + ' ' + surenames[window.setup.getRandom(surenames)];
-      wizard.coatColor = coatColors[window.setup.getRandom(coatColors)];
-      wizard.eyesColor = eyesColors[window.setup.getRandom(eyesColors)];
+      wizard.name = names[window.util.getRandom(names)] + ' ' + surenames[window.util.getRandom(surenames)];
+      wizard.coatColor = coatColors[window.util.getRandom(coatColors)];
+      wizard.eyesColor = eyesColors[window.util.getRandom(eyesColors)];
       wizards.push(wizard);
     }
     return wizards;

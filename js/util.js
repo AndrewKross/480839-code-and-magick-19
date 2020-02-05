@@ -14,6 +14,9 @@
       if (evt.keyCode === ENTER_KEYCODE) {
         action();
       }
+    },
+    getRandom: function (array) { // функция для рандомного выбора параметров
+      return Math.floor(Math.random() * array.length);
     }
   };
 })();
