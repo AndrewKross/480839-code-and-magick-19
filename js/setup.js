@@ -59,9 +59,9 @@
     for (var i = 0; i < 4; i++) { // рандомим волшебника и пушим в основной массив волшебников
       var wizard = {};
 
-      wizard.name = names[setup.getRandom(names)] + ' ' + surenames[setup.getRandom(surenames)];
-      wizard.coatColor = coatColors[setup.getRandom(coatColors)];
-      wizard.eyesColor = eyesColors[setup.getRandom(eyesColors)];
+      wizard.name = names[window.setup.getRandom(names)] + ' ' + surenames[window.setup.getRandom(surenames)];
+      wizard.coatColor = coatColors[window.setup.getRandom(coatColors)];
+      wizard.eyesColor = eyesColors[window.setup.getRandom(eyesColors)];
       wizards.push(wizard);
     }
     return wizards;
