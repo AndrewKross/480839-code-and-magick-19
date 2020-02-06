@@ -46,7 +46,7 @@
     .querySelector('.setup-similar-item');
 
 
-  window.setup = {
+  window.wizard = {
     COAT_COLORS: COAT_COLORS,
     EYES_COLORS: EYES_COLORS
   };

@@ -6,6 +6,8 @@
   var setupOpen = document.querySelector('.setup-open');
   var setupClose = setup.querySelector('.setup-close');
   var dialogHandler = setup.querySelector('.upload');
+  var setupMarginTop = '80px';
+  var setupMarginLeft = '50%';
 
 
   setup.querySelector('.setup-similar').classList.remove('hidden');
@@ -18,6 +20,8 @@
 
   var openPopup = function () {
     setup.classList.remove('hidden');
+    setup.style.top = setupMarginTop;
+    setup.style.left = setupMarginLeft;
     document.addEventListener('keydown', onPopupEscPress);
   };
 
