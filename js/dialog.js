@@ -6,7 +6,10 @@
   var setupOpen = document.querySelector('.setup-open');
   var setupClose = setup.querySelector('.setup-close');
   var dialogHandler = setup.querySelector('.upload');
-
+  var originCoords = {
+    x: getComputedStyle(setup).left,
+    y: getComputedStyle(setup).top,
+  };
 
   setup.querySelector('.setup-similar').classList.remove('hidden');
 
@@ -24,8 +27,8 @@
   var closePopup = function () {
     setup.classList.add('hidden');
     document.removeEventListener('keydown', onPopupEscPress);
-    setup.style.top = window.deafaultCoords.x + 'px';
-    setup.style.left = window.deafaultCoords.y + 'px';
+    setup.style.top = originCoords.y;
+    setup.style.left = originCoords.x;
   };
 
   setupOpen.addEventListener('click', function () {
@@ -51,13 +54,6 @@
       x: evt.clientX,
       y: evt.clientY
     };
-
-    if (!window.deafaultCoords) {
-      window.deafaultCoords = {
-        x: setup.offsetTop,
-        y: setup.offsetLeft
-      };
-    }
 
     var dragged = false;
 
