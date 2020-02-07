@@ -6,8 +6,6 @@
   var setupOpen = document.querySelector('.setup-open');
   var setupClose = setup.querySelector('.setup-close');
   var dialogHandler = setup.querySelector('.upload');
-  var setupMarginTop = '80px';
-  var setupMarginLeft = '50%';
 
 
   setup.querySelector('.setup-similar').classList.remove('hidden');
@@ -20,14 +18,14 @@
 
   var openPopup = function () {
     setup.classList.remove('hidden');
-    setup.style.top = setupMarginTop;
-    setup.style.left = setupMarginLeft;
     document.addEventListener('keydown', onPopupEscPress);
   };
 
   var closePopup = function () {
     setup.classList.add('hidden');
     document.removeEventListener('keydown', onPopupEscPress);
+    setup.style.top = window.deafaultCoords.x + 'px';
+    setup.style.left = window.deafaultCoords.y + 'px';
   };
 
   setupOpen.addEventListener('click', function () {
@@ -53,6 +51,13 @@
       x: evt.clientX,
       y: evt.clientY
     };
+
+    if (!window.deafaultCoords) {
+      window.deafaultCoords = {
+        x: setup.offsetTop,
+        y: setup.offsetLeft
+      };
+    }
 
     var dragged = false;
 
