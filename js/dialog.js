@@ -96,5 +96,4 @@
     document.addEventListener('mouseup', onMouseUp);
   });
 
-
 }());
