@@ -5,6 +5,7 @@
   var StatusCode = {
     OK: 200
   };
+
   var TIMEOUT_IN_MS = 10000;
 
   var serverHandler = function (xhr, onLoad, onError) {
@@ -24,6 +25,7 @@
     });
     xhr.timeout = TIMEOUT_IN_MS;
   };
+
   window.backend = {
     load: function (onLoad, onError) {
       var URL = 'https://js.dump.academy/code-and-magick/data';
@@ -40,4 +42,5 @@
       xhr.send(data);
     },
   };
+
 })();
